@@ -1,10 +1,5 @@
 package main;
 
-/**
- * @author Vincenzo Plantone
- * @matricola 639371
- */
-
 import analyze.AnalyzeFile;
 import analyze.Messaggio;
 
@@ -12,13 +7,19 @@ import java.io.File;
 import java.util.Arrays;
 
 /**
- * Main class
+ * Class Testmain{}
  */
 public class TestMain {
 
     /**
+     * Default private class
+     */
+    private TestMain(){}
+
+    /**
      *
      * @param args
+     * Main input param
      */
     public static void main(String[] args) {
 

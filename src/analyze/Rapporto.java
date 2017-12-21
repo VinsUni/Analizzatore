@@ -14,18 +14,22 @@ public class Rapporto {
     /**
      * Default constructor
      */
-    public Rapporto(){
+    Rapporto(){
         this(0, 0, 0, 0.0);
     }
 
     /**
      *
      * @param lunghezza
+     * int param
      * @param stringheSospette
+     * int param
      * @param punteggioTotale
+     * int param
      * @param punteggioMedio
+     * double param
      */
-    public Rapporto(int lunghezza, int stringheSospette, int punteggioTotale, double punteggioMedio){
+    private Rapporto(int lunghezza, int stringheSospette, int punteggioTotale, double punteggioMedio){
         this.lunghezza = lunghezza;
         this.stringheSospette = stringheSospette;
         this.punteggioTotale = punteggioTotale;
@@ -35,74 +39,86 @@ public class Rapporto {
     /**
      *
      * @return lunghezza
+     * int param
      */
-    public int getLunghezza() {
+    private int getLunghezza() {
         return lunghezza;
     }
 
     /**
      *
      * @param lunghezza
+     * int param
      */
-    public void setLunghezza(int lunghezza) {
+    @SuppressWarnings("unused")
+    private void setLunghezza(int lunghezza) {
         this.lunghezza = lunghezza;
     }
 
     /**
      *
      * @return stringheSospette
+     * int param
      */
-    public int getStringheSospette() {
+    private int getStringheSospette() {
         return stringheSospette;
     }
 
     /**
      *
      * @param stringheSospette
+     * int param
      */
-    public void setStringheSospette(int stringheSospette) {
+    @SuppressWarnings("unused")
+    private void setStringheSospette(int stringheSospette) {
         this.stringheSospette = stringheSospette;
     }
 
     /**
      *
      * @return punteggioTotale
+     * int param
      */
-    public int getPunteggioTotale() {
+    private int getPunteggioTotale() {
         return punteggioTotale;
     }
 
     /**
      *
      * @param punteggioTotale
+     * int param
      */
-    public void setPunteggioTotale(int punteggioTotale) {
+    @SuppressWarnings("unused")
+    private void setPunteggioTotale(int punteggioTotale) {
         this.punteggioTotale = punteggioTotale;
     }
 
     /**
      *
      * @return punteggioMedio
+     * double param
      */
-    public double getPunteggioMedio() {
+    private double getPunteggioMedio() {
         return punteggioMedio;
     }
 
     /**
      *
      * @param punteggioMedio
+     * double param
      */
-    public void setPunteggioMedio(double punteggioMedio) {
+    @SuppressWarnings("unused")
+    private void setPunteggioMedio(double punteggioMedio) {
         this.punteggioMedio = punteggioMedio;
     }
 
     @Override
     public String toString() {
         return "Rapporto{" +
-                "lunghezza=" + lunghezza +
-                ", stringheSospette=" + stringheSospette +
-                ", punteggioTotale=" + punteggioTotale +
-                ", punteggioMedio=" + punteggioMedio +
+                "lunghezza=" + getLunghezza() +
+                ", stringheSospette=" + getStringheSospette() +
+                ", punteggioTotale=" + getPunteggioTotale() +
+                ", punteggioMedio=" + getPunteggioMedio() +
                 '}';
     }
 }

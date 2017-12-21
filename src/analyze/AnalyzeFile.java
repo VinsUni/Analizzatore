@@ -1,7 +1,4 @@
-package analyze; /**
- * @author Vincenzo Plantone
- * @matricola 639371
- */
+package analyze;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,7 +7,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Classe che permette l'analisi dei messaggi.
+ * @author Vincenzo Plantone
+ * @matricola 639371
  */
 public class AnalyzeFile{
 
@@ -20,28 +18,26 @@ public class AnalyzeFile{
     /**
      *
      * @param dizionario
+     * read dizionario file
      */
     public AnalyzeFile(File dizionario){
         rapporto = new Rapporto();
         stringheSospette = new HashMap<>();
-        Scanner in = null;
-        try{
-            in = new Scanner(dizionario);
-            while(in.hasNext()) {
+        try (Scanner in = new Scanner(dizionario)) {
+            while (in.hasNext()) {
                 String parola = in.next();
                 int punteggio = Integer.parseInt(in.next());
                 stringheSospette.put(parola, punteggio);
             }
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("Exception " + e);
-        } finally {
-            in.close();
         }
     }
 
     /**
      *
      * @param m
+     * m param
      */
     public void analisi(Messaggio m){
         int lunghezza = 0;

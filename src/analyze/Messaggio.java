@@ -1,96 +1,101 @@
 package analyze;
 
-/**
- * @author Vincenzo Plantone
- * @matricola 639371
- */
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.Scanner;
 
 /**
- * Class Messaggio
+ * @author Vincenzo Plantone
+ * @matricola 639371
  */
 public class Messaggio implements Comparable<Object>, Serializable{
 
     private String messaggio;
-    private int pericolosità;
+    private int pericolosita;
 
     /**
      *
      * @param m
+     * Messaggio param
      */
+    @SuppressWarnings("all")
     public Messaggio(File m) {
-        Scanner in = null;
-        try {
-            in = new Scanner(m);
-            while(in.hasNext()){
-                String parola = in.next();
+        try (Scanner in = new Scanner(m)) {
+            while (in.hasNext()) {
                 messaggio += in.next();
             }
+            in.close();
         } catch (FileNotFoundException e) {
             System.out.println("Exception " + e);
-        } finally{
-            in.close();
+        } finally {
+            pericolosita = 0;
         }
     }
 
     /**
      *
      * @return messaggio
+     * Messaggio param
      */
-    public String getMessaggio() {
+    private String getMessaggio() {
         return messaggio;
     }
 
     /**
      *
      * @param messaggio
+     * Messaggio param
      */
-    public void setMessaggio(String messaggio) {
+    @SuppressWarnings("unused")
+    private void setMessaggio(String messaggio) {
         this.messaggio = messaggio;
     }
 
     /**
      *
-     * @return pericolosità
+     * @return pericolosita
+     * int param
      */
-    public int getPericolosità() {
-        return pericolosità;
+    private int getPericolosita() {
+        return pericolosita;
     }
 
     /**
      *
-     * @param pericolosità
+     * @param pericolosita
+     * int param
      */
-    public void setPericolosità(int pericolosità) {
-        this.pericolosità = pericolosità;
+    @SuppressWarnings("unused")
+    private void setPericolosita(int pericolosita) {
+        this.pericolosita = pericolosita;
     }
 
     /**
      *
      * @return String
+     * toString() method override
      */
     @Override
     public String toString() {
         return "Messaggio{" +
-                "messaggio='" + messaggio + '\'' +
-                ", pericolosità=" + pericolosità +
+                "messaggio='" + getMessaggio() + '\'' +
+                ", pericolosità=" + getPericolosita() +
                 '}';
     }
 
     /**
      *
      * @param o
+     * o param
      * @return int
+     * compareTo() method override
      */
     @Override
     public int compareTo(Object o) {
-        if(o != null || o instanceof Messaggio){
+        if(o instanceof Messaggio){
             Messaggio m = (Messaggio) o;
-            return -(this.getPericolosità()-m.getPericolosità());
+            return -(this.getPericolosita()-m.getPericolosita());
         }
         return -1;
     }
