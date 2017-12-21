@@ -1,15 +1,27 @@
 package analyze;
 
+/**
+ * @author Vincenzo Plantone
+ * @matricola 639371
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.Scanner;
 
+/**
+ * Class Messaggio
+ */
 public class Messaggio implements Comparable<Object>, Serializable{
 
     private String messaggio;
     private int pericolosità;
 
+    /**
+     *
+     * @param m
+     */
     public Messaggio(File m) {
         Scanner in = null;
         try {
@@ -25,22 +37,42 @@ public class Messaggio implements Comparable<Object>, Serializable{
         }
     }
 
+    /**
+     *
+     * @return messaggio
+     */
     public String getMessaggio() {
         return messaggio;
     }
 
+    /**
+     *
+     * @param messaggio
+     */
     public void setMessaggio(String messaggio) {
         this.messaggio = messaggio;
     }
 
+    /**
+     *
+     * @return pericolosità
+     */
     public int getPericolosità() {
         return pericolosità;
     }
 
+    /**
+     *
+     * @param pericolosità
+     */
     public void setPericolosità(int pericolosità) {
         this.pericolosità = pericolosità;
     }
 
+    /**
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return "Messaggio{" +
@@ -49,7 +81,11 @@ public class Messaggio implements Comparable<Object>, Serializable{
                 '}';
     }
 
-
+    /**
+     *
+     * @param o
+     * @return int
+     */
     @Override
     public int compareTo(Object o) {
         if(o != null || o instanceof Messaggio){
